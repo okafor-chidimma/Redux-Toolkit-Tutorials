@@ -11,6 +11,7 @@ const store = configureStore({
     icecream: icecreamReducer,
     user: userReducer
   }
+  //getDefaultMiddleware() returns an array of all the middleware rtk adds to our store by default. note that concat array method can take as many arguments as you want to add
   // middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger)
 })
 
