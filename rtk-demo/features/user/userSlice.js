@@ -1,5 +1,7 @@
 const axios = require('axios')
 const createSlice = require('@reduxjs/toolkit').createSlice
+
+//this method is to create and dispatch async actions
 const createAsyncThunk = require('@reduxjs/toolkit').createAsyncThunk
 
 const initialState = {
