@@ -30,6 +30,6 @@ const icecreamSlice = createSlice({
   //   }
   // }
 })
-
+//note that exporting the reducer, also exports the extraReducers
 module.exports = icecreamSlice.reducer
 module.exports.icecreamActions = icecreamSlice.actions
