@@ -1,5 +1,25 @@
 const axios = require('axios')
 const createSlice = require('@reduxjs/toolkit').createSlice
+/*
+  1st param is the action type string. Whenever this(fetchUsers) function is dispatched from a component within our application, 
+  createAsyncThunk generates promise lifecycle action types using the 1st param as a prefix:
+
+      pending: <1st param>/pending
+      fulfilled: <1st param>/fulfilled
+      rejected: <1st param>/rejected
+      
+On its initial call, createAsyncThunk dispatches the <1st param>/pending lifecycle action type. The payloadCreator(callback func) then executes to return 
+either a result or an error.
+
+In the event of an error, <1st param>/rejected is dispatched and createAsyncThunk should either return a rejected promise containing an Error instance, 
+a plain descriptive message, or a resolved promise with a RejectWithValue argument as returned by the thunkAPI.rejectWithValue 
+function (more on thunkAPI and error handling momentarily).
+
+If our data fetch is successful, the <1st param>/fulfilled action type gets dispatched.
+
+The three lifecycle action types mentioned earlier can then be evaluated in extraReducers, where we make our desired changes to the store. 
+
+*/
 
 //this method is to create and dispatch async actions. this method accepts action types as first params, then a callback func(which must return a promise) as sec param
 //the method (1) generates promise lifecycle action types based on the action type prefix that you pass in, and (2)returns a thunk action creator that will run the promise callback and dispatch the lifecycle actions based on the returned promise.
